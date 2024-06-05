@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definitiongi
@@ -100,8 +100,8 @@ DATABASES = {
     }
 }
 
-
-DATABASES["default"] = dj_database_url.parse('postgres://django_db_xt6x_user:4j7TCpLWqlozSRV53cQ3jYiDuBCASWnb@dpg-cpfufpn79t8c73ea56vg-a.oregon-postgres.render.com/django_db_xt6x')
+database = os.environ.get("DATABASE") 
+DATABASES["default"] = dj_database_url.parse(database)
 
 
 

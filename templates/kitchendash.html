@@ -12,7 +12,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var socket = new WebSocket('ws://' + window.location.host + '/ws/updates/');
+        var protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+        var socket = new WebSocket(protocol + window.location.host + '/ws/updates/');
 
         socket.onmessage = function(event) {
             var data = JSON.parse(event.data);
@@ -46,7 +47,6 @@
         };
     });
 
-    
     $(document).ready(function () {
         function ajaxPost(url, data, onSuccess) {
             $.ajax({
@@ -94,6 +94,5 @@
         });
     });
 </script>
-
 
 {% endblock %}

@@ -1,1 +1,1 @@
-web: gunicorn Rest_POS.wsgi --log-file -
+web: gunicorn Rest_POS.wsgi:application --log-file -

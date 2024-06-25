@@ -102,7 +102,7 @@ DATABASES = {
 }
 
 database = os.environ.get("DATABASE") 
-database = "postgres://koyeb-adm:dwy7E4jQNqVX@ep-plain-wind-a2dg3t13.eu-central-1.pg.koyeb.app/koyebdb"
+database = "postgres://koyeb-adm:dwy7E4jQNqVX@ep-plain-wind-a2dg3t13.eu-central-1.pg.koyeb.app/cofeebyte"
 DATABASES["default"] = dj_database_url.parse(database)
 
 
